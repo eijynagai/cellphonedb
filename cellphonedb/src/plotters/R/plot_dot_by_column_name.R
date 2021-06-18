@@ -34,8 +34,15 @@ dot_plot = function(selected_rows = NULL,
   pval[pval==0] = 0.0009
   plot.data = cbind(df_names,pval)
   pr = unlist(as.data.frame(sel_means))
+
+  # Modified here 
 ##  pr[pr==0] = 1
-  plot.data = cbind(plot.data,log2(pr + 1))
+  plot.data = cbind(plot.data,log2(pr + 1)) #here
+  
+  # This line will remove the non-significant genes
+  plot.data <- plot.data[plot.data$pval != 1,]
+  
+  
   colnames(plot.data) = c('pair', 'clusters', 'pvalue', 'mean')
 
   my_palette <- colorRampPalette(c("black", "blue", "yellow", "red"), alpha=TRUE)(n=399)
