@@ -2,8 +2,8 @@ library(ggplot2)
 dot_plot = function(selected_rows = NULL,
                     selected_columns = NULL,
                     filename = 'plot.pdf',
-                    width = 8,
-                    height = 10,
+                    width = 20,
+                    height = 200,
                     means_path = './means.txt',
                     pvalues_path = './pvalues.txt',
                     means_separator = '\t',
@@ -53,14 +53,14 @@ dot_plot = function(selected_rows = NULL,
   theme_bw() +
   theme(panel.grid.minor = element_blank(),
         panel.grid.major = element_blank(),
-        axis.text=element_text(size=14, colour = "black"),
+        axis.text=element_text(size=18, colour = "black"),
         axis.text.x = element_text(angle = 90, hjust = 1),
-        axis.text.y = element_text(size=12, colour = "black"),
+        axis.text.y = element_text(size=18, colour = "black"),
         axis.title=element_blank(),
         panel.border = element_rect(size = 0.7, linetype = "solid", colour = "black"))
 
   if (output_extension == '.pdf') {
-      ggsave(filename, width = width, height = height, device = cairo_pdf, limitsize=F)
+      ggsave(filename, device = cairo_pdf, limitsize=F)  #width = width, height = height,
   }
   else {
       ggsave(filename, width = width, height = height, limitsize=F)
