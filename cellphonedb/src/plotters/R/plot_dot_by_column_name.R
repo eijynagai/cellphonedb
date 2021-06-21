@@ -35,7 +35,7 @@ dot_plot = function(selected_rows = NULL,
   plot.data = cbind(df_names,pval)
   pr = unlist(as.data.frame(sel_means))
 
-  # Modified here 
+  # Modified here
 ##  pr[pr==0] = 1
   plot.data = cbind(plot.data,log2(pr + 1)) #here
   
