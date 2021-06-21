@@ -51,9 +51,7 @@ dot_plot = function(selected_rows = NULL,
   geom_point(aes(size=-log10(pvalue),color=mean)) +
   scale_color_gradientn('Log2 mean (Molecule 1, Molecule 2)', colors=my_palette) +
   theme_bw() +
-  theme(panel.grid.minor = element_blank(),
-        panel.grid.major = element_blank(),
-        axis.text=element_text(size=18, colour = "black"),
+  theme(axis.text=element_text(size=18, colour = "black"),
         axis.text.x = element_text(angle = 90, hjust = 1),
         axis.text.y = element_text(size=18, colour = "black"),
         axis.title=element_blank(),
