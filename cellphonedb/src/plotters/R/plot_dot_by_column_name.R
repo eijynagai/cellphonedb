@@ -3,11 +3,11 @@ dot_plot = function(selected_rows = NULL,
                     selected_columns = NULL,
                     filename = 'plot.pdf',
                     width = 20,
-                    height = 100,
+                    height = 50,
                     means_path = './means.txt',
                     pvalues_path = './pvalues.txt',
-                    means_separator = '\t',
-                    pvalues_separator = '\t',
+                    means_separator = ' ', #\t
+                    pvalues_separator = ' ', #\t
                     output_extension = '.pdf'
 ){
 
