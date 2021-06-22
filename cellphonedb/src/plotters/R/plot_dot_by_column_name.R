@@ -4,6 +4,8 @@ dot_plot = function(selected_rows = NULL,
                     filename = 'plot.pdf',
                     means_path = './means.txt',
                     pvalues_path = './pvalues.txt',
+                    width = NULL,
+                    height = NULL,
                     means_separator = '\t',
                     pvalues_separator = '\t',
                     output_extension = '.pdf'
@@ -54,8 +56,7 @@ dot_plot = function(selected_rows = NULL,
         axis.text.y = element_text(size=18, colour = "black"),
         axis.title=element_blank(),
         panel.border = element_rect(size = 0.7, linetype = "solid", colour = "black")) +
-  coord_fixed(ratio = 1) +
-  theme(plot.margin=unit(c(-0.30,0,0,0), "null")) # remove margin around plot
+  coord_fixed(ratio = 1)
 
 
   if (output_extension == '.pdf') {
