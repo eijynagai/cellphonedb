@@ -36,11 +36,11 @@ dot_plot = function(selected_rows = NULL,
   # Modified here
 ##  pr[pr==0] = 1
   plot.data = cbind(plot.data,log2(pr + 1)) #here
-  
+
   # This line will remove the non-significant genes
   plot.data <- plot.data[plot.data$pval != 1,]
-  
-  
+
+
   colnames(plot.data) = c('pair', 'clusters', 'pvalue', 'mean')
 
   my_palette <- colorRampPalette(c("black", "blue", "yellow", "red"), alpha=TRUE)(n=399)
@@ -59,7 +59,7 @@ dot_plot = function(selected_rows = NULL,
 
 
   if (output_extension == '.pdf') {
-      ggsave(filename, device = cairo_pdf, limitsize=F)
+      ggsave(filename, device = cairo_pdf, limitsize=T, dpi = 300)
   }
   else {
       ggsave(filename, limitsize=F)
