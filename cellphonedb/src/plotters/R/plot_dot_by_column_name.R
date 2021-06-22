@@ -60,7 +60,7 @@ dot_plot = function(selected_rows = NULL,
 
 
   if (output_extension == '.pdf') {
-      ggsave(filename, width = width, height = height/2, device = cairo_pdf, limitsize=T, dpi = 300)
+      ggsave(filename, width = width, height = height/2, device = cairo_pdf, limitsize=F)
   }
   else {
       ggsave(filename, limitsize=F)
