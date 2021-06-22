@@ -6,8 +6,8 @@ dot_plot = function(selected_rows = NULL,
                     height = 50,
                     means_path = './means.txt',
                     pvalues_path = './pvalues.txt',
-                    means_separator = ' ', #\t
-                    pvalues_separator = ' ', #\t
+                    means_separator = '\t',
+                    pvalues_separator = '\t',
                     output_extension = '.pdf'
 ){
 
@@ -55,7 +55,8 @@ dot_plot = function(selected_rows = NULL,
         axis.text.x = element_text(angle = 90, hjust = 1),
         axis.text.y = element_text(size=18, colour = "black"),
         axis.title=element_blank(),
-        panel.border = element_rect(size = 0.7, linetype = "solid", colour = "black"))
+        panel.border = element_rect(size = 0.7, linetype = "solid", colour = "black")) +
+  coord_fixed(ratio = 3)
 
   if (output_extension == '.pdf') {
       ggsave(filename, width = width, height = height, device = cairo_pdf, limitsize=F)
