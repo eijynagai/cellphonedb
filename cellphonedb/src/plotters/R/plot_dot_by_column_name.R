@@ -2,8 +2,6 @@ library(ggplot2)
 dot_plot = function(selected_rows = NULL,
                     selected_columns = NULL,
                     filename = 'plot.pdf',
-                    width = 20,
-                    height = 50,
                     means_path = './means.txt',
                     pvalues_path = './pvalues.txt',
                     means_separator = '\t',
@@ -59,10 +57,10 @@ dot_plot = function(selected_rows = NULL,
   coord_fixed(ratio = 1)
 
   if (output_extension == '.pdf') {
-      ggsave(filename, width = width, height = height, device = cairo_pdf, limitsize=F)
+      ggsave(filename, device = cairo_pdf, limitsize=F)
   }
   else {
-      ggsave(filename, width = width, height = height, limitsize=F)
+      ggsave(filename, limitsize=F)
   }
 }
 
