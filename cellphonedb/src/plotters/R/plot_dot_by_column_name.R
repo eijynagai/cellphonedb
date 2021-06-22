@@ -54,7 +54,9 @@ dot_plot = function(selected_rows = NULL,
         axis.text.y = element_text(size=18, colour = "black"),
         axis.title=element_blank(),
         panel.border = element_rect(size = 0.7, linetype = "solid", colour = "black")) +
-  coord_fixed(ratio = 1)
+  coord_fixed(ratio = 1) +
+  theme(plot.margin=unit(c(-0.30,0,0,0), "null")) # remove margin around plot
+
 
   if (output_extension == '.pdf') {
       ggsave(filename, device = cairo_pdf, limitsize=F)
