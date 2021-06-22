@@ -56,7 +56,7 @@ dot_plot = function(selected_rows = NULL,
         axis.text.y = element_text(size=18, colour = "black"),
         axis.title=element_blank(),
         panel.border = element_rect(size = 0.7, linetype = "solid", colour = "black")) +
-  coord_fixed()
+  coord_fixed(ratio = 1)
 
   if (output_extension == '.pdf') {
       ggsave(filename, width = width, height = height, device = cairo_pdf, limitsize=F)
