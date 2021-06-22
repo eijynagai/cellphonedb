@@ -4,8 +4,8 @@ dot_plot = function(selected_rows = NULL,
                     filename = 'plot.pdf',
                     means_path = './means.txt',
                     pvalues_path = './pvalues.txt',
-                    width = NULL,
-                    height = NULL,
+                    width = 20,
+                    height = 500,
                     means_separator = '\t',
                     pvalues_separator = '\t',
                     output_extension = '.pdf'
@@ -60,7 +60,7 @@ dot_plot = function(selected_rows = NULL,
 
 
   if (output_extension == '.pdf') {
-      ggsave(filename, device = cairo_pdf, limitsize=T, dpi = 300)
+      ggsave(filename, width = width, height = height/2, device = cairo_pdf, limitsize=T, dpi = 300)
   }
   else {
       ggsave(filename, limitsize=F)
